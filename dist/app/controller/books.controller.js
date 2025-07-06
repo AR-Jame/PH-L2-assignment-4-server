@@ -38,7 +38,6 @@ function getAllBooks(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const { filter, sortBy, sort, limit } = req.query;
-            console.log(limit);
             const query = {};
             if (filter)
                 query.genre = filter;
@@ -47,7 +46,8 @@ function getAllBooks(req, res, next) {
             const limitValue = limit ? parseInt(limit) : 10;
             const result = yield books_model_1.Book.find(query)
                 .sort({ [sortField]: sortOrder })
-                .limit(limitValue);
+                .limit(limitValue)
+                .select({ description: 0 });
             res.send({
                 success: true,
                 message: "Books retrieved successfully",

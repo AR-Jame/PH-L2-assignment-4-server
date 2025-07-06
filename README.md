@@ -21,7 +21,7 @@ A RESTful backend API built with **Node.js**, **TypeScript**, **MongoDB**, and *
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/AR-Jame/PH-L2-assignment-3
+git clone https://github.com/AR-Jame/PH-L2-assignment-4-server
 cd book-management-api
 ````
 
@@ -57,7 +57,7 @@ bun run src/index.ts
 ## 🌐 Live API
 
 🔗 **Production URL**:
-[https://assignment-3-silk-gamma.vercel.app](https://assignment-3-silk-gamma.vercel.app)
+[https://assignment-4-server-pearl.vercel.app/](https://assignment-4-server-pearl.vercel.app/)
 
 ---
 
