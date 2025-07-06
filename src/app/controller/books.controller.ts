@@ -23,7 +23,6 @@ export async function addBook(req: Request, res: Response, next: NextFunction) {
 export async function getAllBooks(req: Request, res: Response, next: NextFunction) {
     try {
         const { filter, sortBy, sort, limit } = req.query as BookQueryParams;
-        console.log(limit);
         const query: any = {}
         if (filter) query.genre = filter;
 
@@ -34,7 +33,7 @@ export async function getAllBooks(req: Request, res: Response, next: NextFunctio
         const result = await Book.find(query)
             .sort({ [sortField]: sortOrder })
             .limit(limitValue)
-
+            .select({ description: 0 })
         res.send({
             success: true,
             message: "Books retrieved successfully",
